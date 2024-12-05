@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Gran Ducado de Luxemburgo - Economía</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+        .chart-container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="header-left">
+                    <div class="menu">
+                        <a class="toggleMenu" href="#"><img src="images/nav.png" alt="Menú" /></a>
+                        <ul class="nav" id="nav">
+                            <li><a href="home.html">Inicio</a></li>
+                            <li><a href="about.html">Historia</a></li>
+                            <li><a href="culture.html">Cultura</a></li>
+                            <li><a href="gallery.html">Galería</a></li>
+                            <li><a href="economy.html">Economía</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="clear"></div>
+                </div>  
+          </div>
+         </div>
+        </div>
+      </div>
+    <div class="content">
+        <p>Luxemburgo cuenta con una de las economías más sólidas y prósperas del mundo. Sus principales indicadores económicos son:</p>
+        <ul>
+            <li>PIB per cápita: $121,000 USD (2024).</li>
+            <li>Tasa de desempleo: 5.0% (2024).</li>
+            <li>Sector principal: Servicios financieros y tecnología.</li>
+        </ul>
+        <div class="chart-container">
+            <h3>Crecimiento del PIB (2015-2024)</h3>
+            <canvas id="gdpChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Tasa de desempleo (2015-2024)</h3>
+            <canvas id="unemploymentChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Comparación de Sectores Económicos (2024)</h3>
+            <canvas id="sectorChart"></canvas>
+        </div>
+    </div>
+    <script>
+        // Datos del PIB
+        const gdpLabels = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
+        const gdpData = [59800, 62300, 65800, 68200, 71500, 67000, 73500, 82000, 90000, 121000]; // En millones de USD
+        new Chart(document.getElementById('gdpChart'), {
+            type: 'line',
+            data: {
+                labels: gdpLabels,
+                datasets: [{
+                    label: "PIB en millones de USD",
+                    data: gdpData,
+                    borderColor: "#4CAF50",
+                    backgroundColor: "rgba(76, 175, 80, 0.2)",
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Crecimiento del PIB en Luxemburgo' }
+                }
+            }
+        });
+
+        // Datos de desempleo
+        const unemploymentLabels = gdpLabels;
+        const unemploymentData = [5.8, 5.5, 5.3, 5.1, 4.9, 6.5, 5.8, 5.3, 5.1, 5.0]; // En porcentaje
+        new Chart(document.getElementById('unemploymentChart'), {
+            type: 'bar',
+            data: {
+                labels: unemploymentLabels,
+                datasets: [{
+                    label: "Tasa de desempleo (%)",
+                    data: unemploymentData,
+                    backgroundColor: "rgba(255, 99, 132, 0.5)",
+                    borderColor: "rgb(255, 99, 132)",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Tasa de Desempleo en Luxemburgo' }
+                }
+            }
+        });
+
+        // Datos de sectores económicos
+        const sectorLabels = ["Servicios financieros", "Tecnología", "Industria", "Agricultura"];
+        const sectorData = [45, 30, 20, 5]; // Porcentaje de contribución al PIB
+        new Chart(document.getElementById('sectorChart'), {
+            type: 'pie',
+            data: {
+                labels: sectorLabels,
+                datasets: [{
+                    label: "Sectores Económicos",
+                    data: sectorData,
+                    backgroundColor: [
+                        "rgba(54, 162, 235, 0.5)",
+                        "rgba(75, 192, 192, 0.5)",
+                        "rgba(255, 206, 86, 0.5)",
+                        "rgba(255, 99, 132, 0.5)"
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Comparación de Sectores Económicos' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

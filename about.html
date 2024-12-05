@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<title>Gran Ducado de Luxemburgo - Página Oficial</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> 
+    addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
+    function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".dropdown img.flag").addClass("flagvisibility");
+
+        $(".dropdown dt a").click(function() {
+            $(".dropdown dd ul").toggle();
+        });
+
+        $(".dropdown dd ul li a").click(function() {
+            var text = $(this).html();
+            $(".dropdown dt a span").html(text);
+            $(".dropdown dd ul").hide();
+            $("#result").html("Selected value is: " + getSelectedValue("sample"));
+        });
+
+        function getSelectedValue(id) {
+            return $("#" + id).find("dt a span.value").html();
+        }
+
+        $(document).bind('click', function(e) {
+            var $clicked = $(e.target);
+            if (! $clicked.parents().hasClass("dropdown"))
+                $(".dropdown dd ul").hide();
+        });
+
+        $("#flagSwitcher").click(function() {
+            $(".dropdown img.flag").toggleClass("flagvisibility");
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="header-left">
+                    <div class="menu">
+                        <a class="toggleMenu" href="#"><img src="images/nav.png" alt="Menú" /></a>
+                        <ul class="nav" id="nav">
+                            <li><a href="home.html">Inicio</a></li>
+                            <li><a href="about.html">Historia</a></li>
+                            <li><a href="culture.html">Cultura</a></li>
+                            <li><a href="gallery.html">Galería</a></li>
+                            <li><a href="economy.html">Economía</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="clear"></div>
+                </div>  
+          </div>
+         </div>
+        </div>
+      </div>
+     <div class="main">
+      <div class="shop_top">
+        <div class="container">
+            <div class="row team_box">
+                <h3 class="m_2">Bienvenido al Gran Ducado de Luxemburgo</h3>
+                <p class="m_3">Luxemburgo es un país único por su historia, cultura y economía. Con una población pequeña pero vibrante, Luxemburgo ofrece una rica herencia que se refleja en su arquitectura, arte y gastronomía.</p>
+                <br>
+                <div class="col-md-6 team1">
+					<a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/Lux1.png" class="img-responsive" title="Ver más" alt="Luxemburgo"></a>
+					<div id="small-dialog1" class="mfp-hide">
+						<div class="pop_up2">
+							<h2>Historia de Luxemburgo</h2>
+							<p>Luxemburgo, fundado en el año 963, comenzó como el condado de Luxemburgo cuando el conde Siegfried adquirió el castillo de Lucilinburhuc. Durante la Edad Media, el país creció en importancia bajo la dinastía de los condes de Luxemburgo, alcanzando su apogeo en el año 1300, cuando algunos de sus miembros llegaron a ocupar cargos como el emperador del Sacro Imperio Romano Germánico. Después de ser absorbido por los Habsburgo y los Duques de Borgoña, Luxemburgo se independizó en 1839 tras la firma del Tratado de Londres, convirtiéndose en un Gran Ducado. En el siglo XX, el país mantuvo una política de neutralidad durante las Guerras Mundiales y se unió a organizaciones internacionales como la ONU y la Unión Europea. Hoy, Luxemburgo es uno de los países más prósperos del mundo, con una economía basada en las finanzas y un papel clave en la política europea.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-6 team1">
+					<a class="popup-with-zoom-anim" href="#small-dialog2"><img src="images/Lux.png" class="img-responsive" title="Ver más" alt="Cultura"></a>
+					<div id="small-dialog2" class="mfp-hide">
+						<div class="pop_up2">
+							<h2>Cultura Luxembuerguesa</h2>
+							<p>La cultura de Luxemburgo es una mezcla de tradiciones germánicas, francesas y belgas, reflejada en su idioma oficial, el luxemburgués, que coexiste con el francés y el alemán. En las artes, el país ha destacado por su producción medieval de manuscritos iluminados y, en tiempos modernos, por su apoyo a la música, el teatro y el arte contemporáneo. La arquitectura del país es una combinación de castillos medievales y edificaciones modernas, con la Ciudad de Luxemburgo siendo Patrimonio de la Humanidad. La música folk, influenciada por tradiciones germánicas y celtas, y la literatura, con autores como Michel Rodange, son esenciales en su identidad cultural. Además, festividades como el Día Nacional y el Carnaval, junto con su gastronomía que incluye platos como el "Judd mat Gaardebounen" y "Bouneschlupp", son parte fundamental de la vida luxemburguesa.</p>
+						</div>
+					</div>
+				</div>				
+            </div>
+
+            <!-- Infografía -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="infografia">
+                        <h4>Datos Clave de Luxemburgo</h4>
+                        <ul>
+                            <li><strong>Área:</strong> 2,586 km²</li>
+                            <li><strong>Población:</strong> 645,000</li>
+                            <li><strong>Idioma:</strong> Luxemburgués, Francés, Alemán</li>
+                            <li><strong>Moneda:</strong> Euro</li>
+                            <li><strong>Capital:</strong> Luxemburgo</li>
+                            <li><strong>PIB per cápita:</strong> $121,000</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="infografia">
+                        <h4>Atractivos Turísticos</h4>
+                        <ul>
+                            <li><strong>Castillo de Vianden</strong> - Uno de los castillos más impresionantes de Europa.</li>
+                            <li><strong>Ciudad de Luxemburgo</strong> - Patrimonio de la Humanidad de la UNESCO.</li>
+                            <li><strong>La Valle de Mosela</strong> - Famosa por sus viñedos y paisajes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+			<br>
+            <!-- Nuevos Apartados -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="apartado">
+                        <h4>Gastronomía</h4>
+                        <p>Descubre la exquisita mezcla de sabores luxemburgueses, con platos típicos como el Judd mat Gaardebounen, un suculento cerdo con habas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="apartado">
+                        <h4>Eventos y Festivales</h4>
+                        <p>Luxemburgo celebra numerosos festivales a lo largo del año, incluyendo el famoso Festival de Wiltz y la Schueberfouer, una feria tradicional que se realiza desde el siglo XIV.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="copy">
+                    <p>© 2024 Template by <a href="" target="_blank">El Mejor Grupo Del A1</a></p>
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

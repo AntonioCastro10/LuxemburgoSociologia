@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Página de Contacto - Plantilla Gratuita</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+         /* Estilos para el título */
+         .carousel-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        /* Estilos para el carrusel */
+        .carousel-container {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .carousel-slide {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .carousel-item {
+            text-align: center;
+            flex-shrink: 0;
+            width: 200px;
+        }
+        .carousel-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+        .carousel-item p {
+            color: #666;
+            margin-top: 10px;
+        }
+        .carousel-container .prev, .carousel-container .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 10%;
+        }
+        .carousel-container .prev {
+            left: -50px;
+        }
+        .carousel-container .next {
+            right: -50px;
+        }
+        /* Estilos para mensajes de error */
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border: 2px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .custom-popup button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="menu">
+                            <a class="toggleMenu" href="#"><img src="images/nav.png" alt="Menú" /></a>
+                            <ul class="nav" id="nav">
+                                <li><a href="home.html">Inicio</a></li>
+                                <li><a href="about.html">Historia</a></li>
+                                <li><a href="culture.html">Cultura</a></li>
+                                <li><a href="gallery.html">Galería</a></li>
+                                <li><a href="economy.html">Economía</a></li>
+                                <li><a href="contact.html">Contacto</a></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <script type="text/javascript" src="js/responsive-nav.js"></script>
+                        </div>
+                        <div class="clear"></div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- Título del carrusel -->
+    <div class="carousel-title">Integrantes del Proyecto</div>
+    <!-- Carrusel de Integrantes -->
+    <div class="carousel-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <img src="images/Kevin.jpg" alt="Integrante 1">
+                <p>KEVIN ANTONIO <br>CASTRO ARAUJO</p>
+            </div>
+            <div class="carousel-item">
+                <img src="images/David.jpg" alt="Integrante 2">
+                <p>DAVID ALFONSO ALVARENGA BONILLA</p>
+            </div>
+            <div class="carousel-item">
+                <img src="images/Bryan.jpg" alt="Integrante 3">
+                <p>BRAYAN ADALY <br> CAMPOS MARTINEZ</p>
+            </div>
+            <div class="carousel-item">
+                <img src="images/Edgar.jpg" alt="Integrante 4">
+                <p>FRANKLIN EDGARDO ORELLANA AYALA</p>
+            </div>
+            <div class="carousel-item">
+                <img src="images/Luis.jpg" alt="Integrante 5">
+                <p>LUIS ALEXANDER <br> RIVERA ALVAREZ</p>
+            </div>
+            <div class="carousel-item">
+                <img src="images/Frank.jpg" alt="Integrante 6">
+                <p>FRANKLIN ALDAHIR PORTILLO FLORES</p>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <div class="main">
+        <div class="shop_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 contact">
+                        <form method="post">
+                            <div class="to">
+                                <input type="text" name="nombre" class="text" placeholder="Nombre" required>
+                                <input type="text" name="correo" class="text" placeholder="Correo" required>
+                                <select id="destinatario" name="destinatario" required>
+                                    <option value="">Seleccione el destinatario</option>
+                                    <option value="Generalmente">Generalmente</option>
+                                    <option value="Individual">Individual</option>
+                                </select>
+                                <select id="individualOptions" name="individual" style="display:none;">
+                                    <option value="">Seleccione el usuario</option>
+                                    <option value="Kevin Castro">KEVIN ANTONIO CASTRO ARAUJO </option>
+                                    <option value="David Alvarenga">DAVID ALFONSO ALVARENGA BONILLA</option>
+                                    <option value="Brayan Adaly">BRAYAN ADALY CAMPOS MARTINEZ</option>
+                                    <option value="Edgardo Orellana">FRANKLIN EDGARDO ORELLANA AYALA</option>
+                                    <option value="Luis Ortega">LUIS ALEXANDER RIVERA ALVAREZ</option>
+                                    <option value="Franki Rivers">FRANKLIN ALDAHIR PORTILLO FLORES</option>
+                                </select>
+                                <input type="text" name="asunto" class="text" placeholder="Asunto" required>
+                            </div>
+                            <div class="text">
+                                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                                <div class="form-submit">
+                                    <input name="submit" type="submit" id="submit" value="Enviar"><br>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="copy">
+                    <p>© 2024 Template by <a href="" target="_blank">El Mejor Grupo Del A1</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de agradecimiento -->
+    <div class="custom-popup">
+        <h3>¡Gracias!</h3>
+        <p>Tus datos fueron enviados correctamente. Gracias por tu opinión.</p>
+        <button>OK</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+    
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let slides = document.querySelectorAll(".carousel-item");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? "block" : "none";
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            showSlides(slideIndex);
+        });
+    
+        // Muestra el selector adicional al seleccionar "Individual"
+        $('#destinatario').change(function() {
+            if ($(this).val() == 'Individual') {
+                $('#individualOptions').show();
+            } else {
+                $('#individualOptions').hide();
+            }
+        });
+    
+        // Verifica que todos los campos estén completos y el correo sea válido
+        function validateForm() {
+            var isValid = true;
+            $('.error').remove();
+    
+            $('input[type="text"], textarea').each(function() {
+                if ($(this).val() === '') {
+                    isValid = false;
+                    $(this).after('<span class="error">Este campo es requerido</span>');
+                }
+            });
+    
+            // Validación del destinatario
+            var destinatario = $('#destinatario').val();
+            if (destinatario === '') {
+                isValid = false;
+                $('#destinatario').after('<span class="error">Seleccione el destinatario</span>');
+            }
+    
+            if (destinatario === 'Individual') {
+                var individual = $('#individualOptions').val();
+                if (individual === '') {
+                    isValid = false;
+                    $('#individualOptions').after('<span class="error">Seleccione un usuario</span>');
+                }
+            }
+    
+            // Validación adicional del correo
+            var email = $('input[name="correo"]').val();
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+            if (!emailRegex.test(email)) {
+                isValid = false;
+                $('input[name="correo"]').after('<span class="error">Por favor, ingrese un correo válido</span>');
+            }
+    
+            return isValid;
+        }
+    
+        $("form").submit(function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                $(".custom-popup").show();
+                $(".custom-popup button").on("click", function() {
+                    $(".custom-popup").hide();
+                    $('input[type="text"], textarea, select').val(''); // Restablece todos los campos del formulario
+                    $('#individualOptions').hide(); // Oculta la lista de opciones individuales
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>
